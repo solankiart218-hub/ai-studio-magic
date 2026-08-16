@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BabyShootRouteImport } from './routes/baby-shoot'
+import { Route as CommercialRouteImport } from './routes/commercial'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as FashionRouteImport } from './routes/fashion'
+import { Route as PortraitRouteImport } from './routes/portrait'
+import { Route as PreWeddingRouteImport } from './routes/pre-wedding'
+import { Route as WeddingRouteImport } from './routes/wedding'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BabyShootRoute = BabyShootRouteImport.update({
+  id: '/baby-shoot',
+  path: '/baby-shoot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommercialRoute = CommercialRouteImport.update({
+  id: '/commercial',
+  path: '/commercial',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FashionRoute = FashionRouteImport.update({
+  id: '/fashion',
+  path: '/fashion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortraitRoute = PortraitRouteImport.update({
+  id: '/portrait',
+  path: '/portrait',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreWeddingRoute = PreWeddingRouteImport.update({
+  id: '/pre-wedding',
+  path: '/pre-wedding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WeddingRoute = WeddingRouteImport.update({
+  id: '/wedding',
+  path: '/wedding',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/baby-shoot': typeof BabyShootRoute
+  '/commercial': typeof CommercialRoute
+  '/events': typeof EventsRoute
+  '/fashion': typeof FashionRoute
+  '/portrait': typeof PortraitRoute
+  '/pre-wedding': typeof PreWeddingRoute
+  '/wedding': typeof WeddingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/baby-shoot': typeof BabyShootRoute
+  '/commercial': typeof CommercialRoute
+  '/events': typeof EventsRoute
+  '/fashion': typeof FashionRoute
+  '/portrait': typeof PortraitRoute
+  '/pre-wedding': typeof PreWeddingRoute
+  '/wedding': typeof WeddingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/baby-shoot': typeof BabyShootRoute
+  '/commercial': typeof CommercialRoute
+  '/events': typeof EventsRoute
+  '/fashion': typeof FashionRoute
+  '/portrait': typeof PortraitRoute
+  '/pre-wedding': typeof PreWeddingRoute
+  '/wedding': typeof WeddingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/baby-shoot'
+    | '/commercial'
+    | '/events'
+    | '/fashion'
+    | '/portrait'
+    | '/pre-wedding'
+    | '/wedding'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/baby-shoot'
+    | '/commercial'
+    | '/events'
+    | '/fashion'
+    | '/portrait'
+    | '/pre-wedding'
+    | '/wedding'
+  id:
+    | '__root__'
+    | '/'
+    | '/baby-shoot'
+    | '/commercial'
+    | '/events'
+    | '/fashion'
+    | '/portrait'
+    | '/pre-wedding'
+    | '/wedding'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BabyShootRoute: typeof BabyShootRoute
+  CommercialRoute: typeof CommercialRoute
+  EventsRoute: typeof EventsRoute
+  FashionRoute: typeof FashionRoute
+  PortraitRoute: typeof PortraitRoute
+  PreWeddingRoute: typeof PreWeddingRoute
+  WeddingRoute: typeof WeddingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/baby-shoot': {
+      id: '/baby-shoot'
+      path: '/baby-shoot'
+      fullPath: '/baby-shoot'
+      preLoaderRoute: typeof BabyShootRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/commercial': {
+      id: '/commercial'
+      path: '/commercial'
+      fullPath: '/commercial'
+      preLoaderRoute: typeof CommercialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fashion': {
+      id: '/fashion'
+      path: '/fashion'
+      fullPath: '/fashion'
+      preLoaderRoute: typeof FashionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portrait': {
+      id: '/portrait'
+      path: '/portrait'
+      fullPath: '/portrait'
+      preLoaderRoute: typeof PortraitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pre-wedding': {
+      id: '/pre-wedding'
+      path: '/pre-wedding'
+      fullPath: '/pre-wedding'
+      preLoaderRoute: typeof PreWeddingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wedding': {
+      id: '/wedding'
+      path: '/wedding'
+      fullPath: '/wedding'
+      preLoaderRoute: typeof WeddingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BabyShootRoute: BabyShootRoute,
+  CommercialRoute: CommercialRoute,
+  EventsRoute: EventsRoute,
+  FashionRoute: FashionRoute,
+  PortraitRoute: PortraitRoute,
+  PreWeddingRoute: PreWeddingRoute,
+  WeddingRoute: WeddingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
